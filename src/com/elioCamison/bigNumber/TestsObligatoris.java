@@ -1,96 +1,99 @@
 package com.elioCamison.bigNumber;
 
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+
 import static org.junit.Assert.*;
 
 public class TestsObligatoris {
-// Aquests tests són obligatoris passar-los per aprovar la pràctica
+    @Test
+    public void TestsObligatoris() {
+        // Aquests tests són obligatoris passar-los per aprovar la pràctica
 
-    /////////////////////////////////////////////////////////
-    // Sumes Simples
-    /////////////////////////////////////////////////////////
-    BigNumber b1, b2;
-    b1 = new BigNumber("2");
-    b2 = new BigNumber("02");
-    assertEquals(b1, b2);
-    assertEquals(new BigNumber("4"), b1.add(b2));
+        /////////////////////////////////////////////////////////
+        // Sumes Simples
+        /////////////////////////////////////////////////////////
+        BigNumber b1, b2;
+        b1 = new BigNumber("2");
+        b2 = new BigNumber("02");
+        assertEquals(b1, b2);
+        assertEquals(new BigNumber("4"), b1.add(b2));
 
-    b1 = new BigNumber("12");
-    b2 = new BigNumber("34");
-    assertEquals(new BigNumber("46"), b1.add(b2));
+        b1 = new BigNumber("12");
+        b2 = new BigNumber("34");
+        assertEquals(new BigNumber("46"), b1.add(b2));
 
-    b1 = new BigNumber("00022");
-    b2 = new BigNumber("090");
-    assertEquals(new BigNumber("112"), b1.add(b2));
+        b1 = new BigNumber("00022");
+        b2 = new BigNumber("090");
+        assertEquals(new BigNumber("112"), b1.add(b2));
 
-    /////////////////////////////////////////////////////////
-    // Sumes Complexes
-    /////////////////////////////////////////////////////////
-    b1 = new BigNumber("567456234578945345234234456");
-    b2 = new BigNumber("456235768978078934523523452345456");
-    assertEquals(new BigNumber("456236336434313513468868686579912"), b1.add(b2));
+        /////////////////////////////////////////////////////////
+        // Sumes Complexes
+        /////////////////////////////////////////////////////////
+        b1 = new BigNumber("567456234578945345234234456");
+        b2 = new BigNumber("456235768978078934523523452345456");
+        assertEquals(new BigNumber("456236336434313513468868686579912"), b1.add(b2));
 
-    /////////////////////////////////////////////////////////
-    // Restes Simples
-    /////////////////////////////////////////////////////////
-    b1 = new BigNumber("60");
-    b2 = new BigNumber("010");
-    assertEquals(new BigNumber("50"), b1.sub(b2));
+        /////////////////////////////////////////////////////////
+        // Restes Simples
+        /////////////////////////////////////////////////////////
+        b1 = new BigNumber("60");
+        b2 = new BigNumber("010");
+        assertEquals(new BigNumber("50"), b1.sub(b2));
 
-    b1 = new BigNumber("34535233");
-    b2 = new BigNumber("04533453");
-    assertEquals(new BigNumber("30001780"), b1.sub(b2));
+        b1 = new BigNumber("34535233");
+        b2 = new BigNumber("04533453");
+        assertEquals(new BigNumber("30001780"), b1.sub(b2));
 
-    /////////////////////////////////////////////////////////
-    // Restes Complexes
-    /////////////////////////////////////////////////////////
-    b1 = new BigNumber("45634563456565555557854564223429999886785678912");
-    b2 = new BigNumber("0000000000000000000000000000000000000000000000000000000000011");
-    assertEquals(new BigNumber("45634563456565555557854564223429999886785678901"), b1.sub(b2));
+        /////////////////////////////////////////////////////////
+        // Restes Complexes
+        /////////////////////////////////////////////////////////
+        b1 = new BigNumber("45634563456565555557854564223429999886785678912");
+        b2 = new BigNumber("0000000000000000000000000000000000000000000000000000000000011");
+        assertEquals(new BigNumber("45634563456565555557854564223429999886785678901"), b1.sub(b2));
 
-    b1 = new BigNumber("45634563456565555557854564223429999886785678912");
-    b2 = new BigNumber("789789797979454534534534567867823489898899");
-    assertEquals(new BigNumber("45633773666767576103320029688862132063295780013"), b1.sub(b2));
+        b1 = new BigNumber("45634563456565555557854564223429999886785678912");
+        b2 = new BigNumber("789789797979454534534534567867823489898899");
+        assertEquals(new BigNumber("45633773666767576103320029688862132063295780013"), b1.sub(b2));
 
-    b1 = new BigNumber("45634563456565555557854564223429999886785678912");
-    b2 = new BigNumber("789789797979454534534534567867823489898899");
-    assertEquals(new BigNumber("45633773666767576103320029688862132063295780013"), b1.sub(b2));
+        b1 = new BigNumber("45634563456565555557854564223429999886785678912");
+        b2 = new BigNumber("789789797979454534534534567867823489898899");
+        assertEquals(new BigNumber("45633773666767576103320029688862132063295780013"), b1.sub(b2));
 
-    /////////////////////////////////////////////////////////
-    // Comparacions
-    /////////////////////////////////////////////////////////
-    b1 = new BigNumber("2");
-    b2 = new BigNumber("02");
-    assertEquals(b1, b2);
+        /////////////////////////////////////////////////////////
+        // Comparacions
+        /////////////////////////////////////////////////////////
+        b1 = new BigNumber("2");
+        b2 = new BigNumber("02");
+        assertEquals(b1, b2);
 
-    b1 = new BigNumber("345345234523452352345");
-    b2 = new BigNumber("000000000000000345345234523452352345");
-    assertEquals(b1, b2);
+        b1 = new BigNumber("345345234523452352345");
+        b2 = new BigNumber("000000000000000345345234523452352345");
+        assertEquals(b1, b2);
 
-    b1 = new BigNumber("56");
-    b2 = new BigNumber("000000000000000000000000000000056");
-    assertEquals(0, b1.compareTo(b2));
+        b1 = new BigNumber("56");
+        b2 = new BigNumber("000000000000000000000000000000056");
+        assertEquals(0, b1.compareTo(b2));
 
-    b1 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
-    b2 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
-    assertEquals(0, b1.compareTo(b2));
+        b1 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
+        b2 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
+        assertEquals(0, b1.compareTo(b2));
 
-    b1 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674561");
-    b2 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
-    assertEquals(-1, b1.compareTo(b2));
+        b1 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674561");
+        b2 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
+        assertEquals(-1, b1.compareTo(b2));
 
-    b1 = new BigNumber("556456345634563456345634556785678567856783456345634563456567456745674561");
-    b2 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
-    assertEquals(1, b1.compareTo(b2));
+        b1 = new BigNumber("556456345634563456345634556785678567856783456345634563456567456745674561");
+        b2 = new BigNumber("456456345634563456345634556785678567856783456345634563456567456745674567");
+        assertEquals(1, b1.compareTo(b2));
 
-    b1 = new BigNumber("556456345634563456345634556785678567856783456345634563456567456745674561");
-    b2 = new BigNumber("556456345634563456345634556783678567856783456345634563456567456745674561");
-    assertEquals(1, b1.compareTo(b2));
+        b1 = new BigNumber("556456345634563456345634556785678567856783456345634563456567456745674561");
+        b2 = new BigNumber("556456345634563456345634556783678567856783456345634563456567456745674561");
+        assertEquals(1, b1.compareTo(b2));
 
-    b1 = new BigNumber("000556456345634563456345634556785678567856783456345634563456567456745674561");
-    b2 = new BigNumber("556456345734563456345634556783678567856783456345634563456567456745674561");
-    assertEquals(-1, b1.compareTo(b2));
-}
+        b1 = new BigNumber("000556456345634563456345634556785678567856783456345634563456567456745674561");
+        b2 = new BigNumber("556456345734563456345634556783678567856783456345634563456567456745674561");
+        assertEquals(-1, b1.compareTo(b2));
+    }
 
     @Test
     public void TestsOpcionals() {
@@ -141,4 +144,6 @@ public class TestsObligatoris {
         b1 = new BigNumber("12345645634563456345656767878967894");
         b2 = new BigNumber("22");
         assertEquals(new BigNumber("561165710661975288438943994498540"), b1.div(b2));
+    }
+
 }

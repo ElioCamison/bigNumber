@@ -1,9 +1,11 @@
 package com.elioCamison.bigNumber;
 
 public class BigNumber {
+    public String numero;
+
         // Constructor 1
         public BigNumber(String s) {
-
+            this.numero = numero;
         }
 
         // Constructor 2
