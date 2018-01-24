@@ -2,11 +2,21 @@ package com.elioCamison.bigNumber;
 
 public class BigNumber {
 
-    public String numero;
+    private String numero;
 
         // Constructor 1
         public BigNumber(String numero) {
+            //-- ----------------------------------------------------------------
             this.numero = numero;
+
+            //-- ----------------------------------------------------------------
+            for (int i = 0; i < numero.length(); i++) {
+                int a = numero.charAt(i);
+                if (numero.charAt(i) == 0) {
+                    continue;
+                }
+            }
+            //-- ----------------------------------------------------------------
         }
 
         // Constructor 2
@@ -14,11 +24,28 @@ public class BigNumber {
             this.numero = b.getNumero();
         }
 
-        // Suma
-        public BigNumber add(BigNumber other) {
 
+        //--o Suma
+        public BigNumber add(BigNumber other) {
+            //-- ----------------------------------------------------------------
             String valor = other.getNumero();
+
+            //--o Con esto se puede comprobar que no sea negativo
+            int comprobar = Integer.parseInt(valor);
+
+            if(comprobar < 0){
+                //--o Code...
+            }
+
+            //-- ----------------------------------------------------------------
+            //--o Recorremos el String
             for (int i = 0; i < valor.length(); i++){
+                int a = valor.charAt(i);
+                if (valor.charAt(i) == 0){
+
+                }
+                char c = valor.charAt(i);
+
                 int vlr = Integer.parseInt(valor);
                 int num = Integer.parseInt(numero);
                 int result = vlr + num;
@@ -26,6 +53,7 @@ public class BigNumber {
 
                 other.setNumero(rlt);
             }
+            //-- ----------------------------------------------------------------
             return other;
         }
 
@@ -53,6 +81,11 @@ public class BigNumber {
 
     // Mira si dos objectes BigNumber són iguals
         public boolean equals(Object other) {
+            BigNumber oth = (BigNumber) other;
+
+            if (this.numero.equals(oth.numero)){
+                return true;
+            }
             return false;
         }
 
