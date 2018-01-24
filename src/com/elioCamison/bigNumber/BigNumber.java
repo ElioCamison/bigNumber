@@ -37,6 +37,7 @@ public class BigNumber {
                 //--o Code...
             }
 
+            BigNumber nb  = new BigNumber("");
             //-- ----------------------------------------------------------------
             //--o Recorremos el String
             for (int i = 0; i < valor.length(); i++){
@@ -47,9 +48,10 @@ public class BigNumber {
                 String rlt = String.valueOf(result);
 
                 other.setNumero(rlt);
+                nb = new BigNumber(rlt);
             }
             //-- ----------------------------------------------------------------
-            return other;
+            return nb;
         }
 
         // Resta
