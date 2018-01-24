@@ -2,7 +2,7 @@ package com.elioCamison.bigNumber;
 
 public class BigNumber {
 
-    private String numero;
+    public String numero;
 
     /**
      * --o Constructor 1
@@ -115,11 +115,15 @@ public class BigNumber {
     public int compareTo(BigNumber other) {
         //-- ----------------------------------------------------------------
         String vlr = other.getNumero();
+        String vlr2 = this.getNumero();
         //-- ----------------------------------------------------------------
+        if (vlr.length() == vlr2.length()){
+            return 1;
+        }
+
         for (int i = 0; i < vlr.length(); i++) {
 
         }
-
         BigNumber oth = (BigNumber) other;
         return 0;
     }
