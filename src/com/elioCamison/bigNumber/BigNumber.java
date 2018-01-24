@@ -8,7 +8,6 @@ public class BigNumber {
         public BigNumber(String numero) {
             //-- ----------------------------------------------------------------
             this.numero = numero;
-
             //-- ----------------------------------------------------------------
             for (int i = 0; i < numero.length(); i++) {
                 char vlr = numero.charAt(i);
@@ -29,14 +28,7 @@ public class BigNumber {
         public BigNumber add(BigNumber other) {
             //-- ----------------------------------------------------------------
             String valor = other.getNumero();
-
-            //--o Con esto se puede comprobar que no sea negativo
-            int comprobar = Integer.parseInt(valor);
-
-            if(comprobar < 0){
-                //--o Code...
-            }
-
+            //-- ----------------------------------------------------------------
             BigNumber nb  = new BigNumber("");
             //-- ----------------------------------------------------------------
             //--o Recorremos el String
@@ -78,12 +70,11 @@ public class BigNumber {
 
     // Mira si dos objectes BigNumber són iguals
         public boolean equals(Object other) {
+            //-- ----------------------------------------------------------------
             BigNumber oth = (BigNumber) other;
-
-            if (this.numero.equals(oth.numero)){
-                return true;
-            }
-            return false;
+            //-- ----------------------------------------------------------------
+            return this.numero.equals(oth.numero) ? true : false;
+            //-- ----------------------------------------------------------------
         }
 
         // Retorna el valor de Numero
