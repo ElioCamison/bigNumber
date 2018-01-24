@@ -4,28 +4,28 @@ public class BigNumber {
 
     private String numero;
 
-        // Constructor 1
+        // CONSTRUCTOR 1
         public BigNumber(String numero) {
             //-- ----------------------------------------------------------------
             this.numero = numero;
 
             //-- ----------------------------------------------------------------
             for (int i = 0; i < numero.length(); i++) {
-                int a = numero.charAt(i);
-                if (numero.charAt(i) == 0) {
+                char vlr = numero.charAt(i);
+                if (vlr == 48 && numero.charAt(i) == 1) {
                     continue;
                 }
             }
             //-- ----------------------------------------------------------------
         }
 
-        // Constructor 2
+        // CONSTRUCTOR 2
         public BigNumber(BigNumber b) {
             this.numero = b.getNumero();
         }
 
 
-        //--o Suma
+        //--o SUMA
         public BigNumber add(BigNumber other) {
             //-- ----------------------------------------------------------------
             String valor = other.getNumero();
@@ -40,11 +40,6 @@ public class BigNumber {
             //-- ----------------------------------------------------------------
             //--o Recorremos el String
             for (int i = 0; i < valor.length(); i++){
-                int a = valor.charAt(i);
-                if (valor.charAt(i) == 0){
-
-                }
-                char c = valor.charAt(i);
 
                 int vlr = Integer.parseInt(valor);
                 int num = Integer.parseInt(numero);

@@ -13,7 +13,7 @@ public class TestsObligatoris {
         // Sumes Simples
         /////////////////////////////////////////////////////////
         BigNumber b1, b2;
-        b1 = new BigNumber("2");
+        b1 = new BigNumber("02");
         b2 = new BigNumber("02");
         assertEquals(b1, b2);
         assertEquals(new BigNumber("4"), b1.add(b2));
