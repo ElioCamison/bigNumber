@@ -2,7 +2,7 @@ package com.elioCamison.bigNumber;
 
 public class BigNumber {
 
-    public String numero;
+    public String digit;
 
     /**
      * --o Constructor 1
@@ -10,15 +10,27 @@ public class BigNumber {
      * @param numero
      */
     public BigNumber(String numero) {
-        //-- ----------------------------------------------------------------
-        this.numero = numero;
-        //-- ----------------------------------------------------------------
+        int cont = 0;
         for (int i = 0; i < numero.length(); i++) {
             char vlr = numero.charAt(i);
-            if (vlr == 48 && numero.charAt(i) == 1) {
-                continue;
-            }
+            if (vlr == '0') {
+                cont++;
+            } else break;
         }
+
+        this.digit = numero.substring(cont);
+
+
+//
+//        String vlr1  = "";
+//        //-- ----------------------------------------------------------------
+//        for (int i = 0; i < numero.length(); i++) {
+//            char vlr = numero.charAt(i);
+//            if (vlr == 48 && numero.charAt(i) == 0) {
+//                numero.replace("0","");
+//            }
+//        }
+//        this.numero = vlr1;
         //-- ----------------------------------------------------------------
     }
 
@@ -32,7 +44,7 @@ public class BigNumber {
      */
     public BigNumber(BigNumber b) {
         //-- ----------------------------------------------------------------
-        this.numero = b.getNumero();
+        this.digit = b.getNumero();
         //-- ----------------------------------------------------------------
     }
 
@@ -55,7 +67,7 @@ public class BigNumber {
         for (int i = 0; i < valor.length(); i++) {
 
             int vlr = Integer.parseInt(valor);
-            int num = Integer.parseInt(numero);
+            int num = Integer.parseInt(digit);
             int result = vlr + num;
             String rlt = String.valueOf(result);
 
@@ -118,8 +130,8 @@ public class BigNumber {
         //-- ----------------------------------------------------------------
         BigNumber oth = (BigNumber) other;
         //-- ----------------------------------------------------------------
-        int n = this.numero.compareTo(oth.numero);
-        int n2 = oth.numero.compareTo(this.numero);
+        int n = this.digit.compareTo(oth.digit);
+        int n2 = oth.digit.compareTo(this.digit);
         //-- ----------------------------------------------------------------
         if (n < n2){
             return -1;
@@ -144,7 +156,7 @@ public class BigNumber {
         //-- ----------------------------------------------------------------
         BigNumber oth = (BigNumber) other;
         //-- ----------------------------------------------------------------
-        return this.numero.equals(oth.numero) ? true : false;
+        return this.digit.equals(oth.digit);
         //-- ----------------------------------------------------------------
     }
 
@@ -157,7 +169,7 @@ public class BigNumber {
      * @return
      */
     public String getNumero() {
-        return numero;
+        return digit;
     }
 
     //-- ----------------------------------------------------------------
@@ -169,7 +181,7 @@ public class BigNumber {
      * @param numero
      */
     public void setNumero(String numero) {
-        this.numero = numero;
+        this.digit = numero;
     }
 
     //-- ----------------------------------------------------------------
@@ -178,7 +190,7 @@ public class BigNumber {
     @Override
     public String toString() {
         return "BigNumber{" +
-                "numero='" + numero + '\'' +
+                "numero='" + digit + '\'' +
                 '}';
     }
 
