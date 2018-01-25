@@ -10,27 +10,19 @@ public class BigNumber {
      * @param numero
      */
     public BigNumber(String numero) {
+        //-- ----------------------------------------------------------------
         int cont = 0;
+        //-- ----------------------------------------------------------------
         for (int i = 0; i < numero.length(); i++) {
+            //-- ----------------------------------------------------------------
             char vlr = numero.charAt(i);
+            //-- ----------------------------------------------------------------
             if (vlr == '0') {
                 cont++;
             } else break;
         }
-
+        //-- ----------------------------------------------------------------
         this.digit = numero.substring(cont);
-
-
-//
-//        String vlr1  = "";
-//        //-- ----------------------------------------------------------------
-//        for (int i = 0; i < numero.length(); i++) {
-//            char vlr = numero.charAt(i);
-//            if (vlr == 48 && numero.charAt(i) == 0) {
-//                numero.replace("0","");
-//            }
-//        }
-//        this.numero = vlr1;
         //-- ----------------------------------------------------------------
     }
 
@@ -59,7 +51,23 @@ public class BigNumber {
      */
     public BigNumber add(BigNumber other) {
         //-- ----------------------------------------------------------------
+        StringBuilder vlr1 = new StringBuilder();
+        StringBuilder vlr2 = new StringBuilder();
+        StringBuilder s1 = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
         String valor = other.getNumero();
+        vlr1.append(this.getNumero());
+        vlr2.append(other.getNumero());
+
+        if (vlr1.length() > vlr2.length()){
+             s1 = vlr1;
+             s2 = vlr2;
+        } else {
+            s1 = vlr2;
+            s2 = vlr1;
+        }
+
+
         //-- ----------------------------------------------------------------
         BigNumber nb = new BigNumber("");
         //-- ----------------------------------------------------------------
