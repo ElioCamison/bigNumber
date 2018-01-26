@@ -53,35 +53,44 @@ public class BigNumber {
         //-- ----------------------------------------------------------------
         StringBuilder vlr1 = new StringBuilder();
         StringBuilder vlr2 = new StringBuilder();
+        //-- ----------------------------------------------------------------
         StringBuilder s1 = new StringBuilder();
         StringBuilder s2 = new StringBuilder();
+        //-- ----------------------------------------------------------------
         String valor = other.getNumero();
         vlr1.append(this.getNumero());
         vlr2.append(other.getNumero());
-
-        if (vlr1.length() > vlr2.length()){
+        //-- ----------------------------------------------------------------
+        if (vlr1.length() > vlr2.length() || vlr1.length() == vlr2.length()){
              s1 = vlr1;
              s2 = vlr2;
-        } else {
+        } else if (vlr1.length() < vlr2.length()) {
             s1 = vlr2;
             s2 = vlr1;
         }
 
+        StringBuilder aux = new StringBuilder();
 
-        //-- ----------------------------------------------------------------
-        BigNumber nb = new BigNumber("");
-        //-- ----------------------------------------------------------------
-        //--o Recorremos el String
-        for (int i = 0; i < valor.length(); i++) {
+        for (int i = 0; i < s1.length(); i++){
+            char c1 = s1.charAt(i);
+            char c2 = s2.charAt(i);
 
-            int vlr = Integer.parseInt(valor);
-            int num = Integer.parseInt(digit);
-            int result = vlr + num;
-            String rlt = String.valueOf(result);
+            //valores ascii, entre 48 y 57
+            String c11 = String.valueOf(c1);
+            String c22 = String.valueOf(c2);
 
-            other.setNumero(rlt);
-            nb = new BigNumber(rlt);
+            int c222 = Integer.parseInt(c11);
+            int c111 = Integer.parseInt(c22);
+
+            int res = c222+ c111;
+
+            String result = Integer.toString(res);
+            aux.append(result);
+
         }
+        //-- ----------------------------------------------------------------
+        BigNumber nb = new BigNumber(aux.toString());
+
         //-- ----------------------------------------------------------------
         return nb;
     }
