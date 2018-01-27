@@ -124,7 +124,9 @@ public class BigNumber {
             aux.lastIndexOf(aux.append(result).toString());
         }
         //-- ----------------------------------------------------------------
-        aux.reverse();
+        if (vlr1.length() > 1){
+            aux.reverse();
+        }
         //-- ----------------------------------------------------------------
         BigNumber nb = new BigNumber(aux.toString());
 
@@ -195,7 +197,17 @@ public class BigNumber {
             //-- ----------------------------------------------------------------
             meLlevo = 0;
             //-- ----------------------------------------------------------------
-            int resultado = valorResta1 - valorResta2;
+            int resultado = 0;
+            int restaAux = 0;
+            int uno = 1;
+            if(vlr1.charAt(i) == vlr2.charAt(i) || vlr2.charAt(i) > vlr1.charAt(i) && vlr1.length() != 1){
+                restaAux = valorResta2;
+                valorResta2 = valorResta1;
+                valorResta1 = valorResta2;
+            } else /*if (valorResta2 > valorResta1)*/{
+                valorResta2 += 10;
+            }
+            resultado = valorResta1 - valorResta2;
             //-- ----------------------------------------------------------------
             int res = Math.abs(resultado);
             //-- ----------------------------------------------------------------
