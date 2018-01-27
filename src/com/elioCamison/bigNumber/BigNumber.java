@@ -62,24 +62,34 @@ public class BigNumber {
         vlr2.append(other.getNumero());
         //-- ----------------------------------------------------------------
         int cont = 0;
-        if (vlr1.length() > vlr2.length() || vlr1.length() == vlr2.length()){
-             s1 = vlr1;
-             s2 = vlr2;
-             cont = vlr1.length() - vlr2.length();
-             s1.reverse();
-            s2.reverse();
-            for (int i = 0; i< cont;i++){
-                s2.append(0);
-            }
-        } else if (vlr1.length() < vlr2.length()) {
-            s1 = vlr2;
-            s2 = vlr1;
-            cont = vlr2.length() - vlr1.length();
+        if (vlr1.length() > vlr2.length() || vlr1.length() == vlr2.length()) {
+            //-- ----------------------------------------------------------------
+            s1 = vlr1;
+            s2 = vlr2;
+            //-- ----------------------------------------------------------------
+            cont = vlr1.length() - vlr2.length();
+            //-- ----------------------------------------------------------------
             s1.reverse();
             s2.reverse();
-            for (int i = 0; i< cont;i++){
+            //-- ----------------------------------------------------------------
+            for (int i = 0; i < cont; i++) {
                 s2.append(0);
             }
+            //-- ----------------------------------------------------------------
+        } else if (vlr1.length() < vlr2.length()) {
+            //-- ----------------------------------------------------------------
+            s1 = vlr2;
+            s2 = vlr1;
+            //-- ----------------------------------------------------------------
+            cont = vlr2.length() - vlr1.length();
+            //-- ----------------------------------------------------------------
+            s1.reverse();
+            s2.reverse();
+            //-- ----------------------------------------------------------------
+            for (int i = 0; i < cont; i++) {
+                s2.append(0);
+            }
+            //-- ----------------------------------------------------------------
         }
         //-- ----------------------------------------------------------------
         StringBuilder aux = new StringBuilder();
@@ -90,21 +100,23 @@ public class BigNumber {
             char c1 = s1.charAt(i);
             char c2 = s2.charAt(i);
             //-- ----------------------------------------------------------------
-            //valores ascii, entre 48 y 57
             String c11 = String.valueOf(c1);
             String c22 = String.valueOf(c2);
             //-- ----------------------------------------------------------------
             int c222 = Integer.parseInt(c11);
             int c111 = Integer.parseInt(c22);
-
+            //-- ----------------------------------------------------------------
             c111 += meLlevo;
+            //-- ----------------------------------------------------------------
             meLlevo = 0;
             //-- ----------------------------------------------------------------
-            int res = c222+ c111;
+            int res = c222 + c111;
             //-- ----------------------------------------------------------------
-            if (res > 9){
-                res %= 10;
-                meLlevo++;
+            if (i != s1.length() - 1) {
+                if (res > 9) {
+                    res %= 10;
+                    meLlevo++;
+                }
             }
             //-- ----------------------------------------------------------------
             String result = Integer.toString(res);
@@ -165,6 +177,7 @@ public class BigNumber {
     /**
      * --o  Compara dos BigNumber. Torna 0 si són iguals, -1 si el primer és menor
      * --o i torna 1 si el segon és menor
+     *
      * @param other
      * @return oth
      */
@@ -175,7 +188,7 @@ public class BigNumber {
         int n = this.digit.compareTo(oth.digit);
         int n2 = oth.digit.compareTo(this.digit);
         //-- ----------------------------------------------------------------
-        if (n < n2){
+        if (n < n2) {
             return -1;
         } else if (n > n2) {
             return 1;
