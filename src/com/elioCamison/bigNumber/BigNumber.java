@@ -57,37 +57,62 @@ public class BigNumber {
         StringBuilder s1 = new StringBuilder();
         StringBuilder s2 = new StringBuilder();
         //-- ----------------------------------------------------------------
-        String valor = other.getNumero();
+        //String valor = other.getNumero();
         vlr1.append(this.getNumero());
         vlr2.append(other.getNumero());
         //-- ----------------------------------------------------------------
+        int cont = 0;
         if (vlr1.length() > vlr2.length() || vlr1.length() == vlr2.length()){
              s1 = vlr1;
              s2 = vlr2;
+             cont = vlr1.length() - vlr2.length();
+             s1.reverse();
+            s2.reverse();
+            for (int i = 0; i< cont;i++){
+                s2.append(0);
+            }
         } else if (vlr1.length() < vlr2.length()) {
             s1 = vlr2;
             s2 = vlr1;
+            cont = vlr2.length() - vlr1.length();
+            s1.reverse();
+            s2.reverse();
+            for (int i = 0; i< cont;i++){
+                s2.append(0);
+            }
         }
-
+        //-- ----------------------------------------------------------------
         StringBuilder aux = new StringBuilder();
-
-        for (int i = 0; i < s1.length(); i++){
+        //-- ----------------------------------------------------------------
+        int meLlevo = 0;
+        //-- ----------------------------------------------------------------
+        for (int i = 0; i < s1.length(); i++) {
             char c1 = s1.charAt(i);
             char c2 = s2.charAt(i);
-
+            //-- ----------------------------------------------------------------
             //valores ascii, entre 48 y 57
             String c11 = String.valueOf(c1);
             String c22 = String.valueOf(c2);
-
+            //-- ----------------------------------------------------------------
             int c222 = Integer.parseInt(c11);
             int c111 = Integer.parseInt(c22);
 
+            c111 += meLlevo;
+            meLlevo = 0;
+            //-- ----------------------------------------------------------------
             int res = c222+ c111;
-
+            //-- ----------------------------------------------------------------
+            if (res > 9){
+                res %= 10;
+                meLlevo++;
+            }
+            //-- ----------------------------------------------------------------
             String result = Integer.toString(res);
-            aux.append(result);
-
+            //-- ----------------------------------------------------------------
+            aux.lastIndexOf(aux.append(result).toString());
         }
+        //-- ----------------------------------------------------------------
+        aux.reverse();
         //-- ----------------------------------------------------------------
         BigNumber nb = new BigNumber(aux.toString());
 

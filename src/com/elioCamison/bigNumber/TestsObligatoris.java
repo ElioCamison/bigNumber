@@ -13,7 +13,7 @@ public class TestsObligatoris {
         // Sumes Simples
         /////////////////////////////////////////////////////////
         BigNumber b1, b2;
-        b1 = new BigNumber("28");
+        b1 = new BigNumber("2");
         b2 = new BigNumber("02");
         assertEquals(b1, b2);
         assertEquals(new BigNumber("4"), b1.add(b2));
@@ -29,9 +29,9 @@ public class TestsObligatoris {
         /////////////////////////////////////////////////////////
         // Sumes Complexes
         /////////////////////////////////////////////////////////
-        /*b1 = new BigNumber("567456234578945345234234456");
+        b1 = new BigNumber("567456234578945345234234456");
         b2 = new BigNumber("456235768978078934523523452345456");
-        assertEquals(new BigNumber("456236336434313513468868686579912"), b1.add(b2));*/
+        assertEquals(new BigNumber("456236336434313513468868686579912"), b1.add(b2));
 
         /////////////////////////////////////////////////////////
         // Restes Simples
