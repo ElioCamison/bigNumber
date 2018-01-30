@@ -95,7 +95,7 @@ public class TestsObligatoris {
         assertEquals(-1, b1.compareTo(b2));
     }
 
-    /*@Test
+    @Test
     public void TestsOpcionals() {
         // Per optar a una nota de Bé/Notable cal passar també tots aquests tests
 
@@ -114,7 +114,7 @@ public class TestsObligatoris {
         b2 = new BigNumber("22");
         assertEquals(new BigNumber("7597597597597595158042042039597590"), b1.mult(b2));
 
-        b1 = new BigNumber("234890456345345345345345234456456456345345");
+        /*b1 = new BigNumber("234890456345345345345345234456456456345345");
         b2 = new BigNumber("1228");
         assertEquals(new BigNumber("288445480392084084084083947912528528392083660"), b1.mult(b2));
 
@@ -124,8 +124,8 @@ public class TestsObligatoris {
 
         b1 = new BigNumber("2134345456123486126462457864246456434312345");
         b2 = new BigNumber("4534564545645644564564567861534978978512");
-        assertEquals(new BigNumber("470"), b1.div(b2));
-    }*/
+        assertEquals(new BigNumber("470"), b1.div(b2));*/
+    }
 
     /*@Test
     public void TestsExtra() {

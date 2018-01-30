@@ -198,35 +198,15 @@ public class BigNumber {
             meLlevo = 0;
             //-- ----------------------------------------------------------------
             int resultado = 0;
-            //int restaAux = 0;
-
+            //-- ----------------------------------------------------------------
             if ( valorResta1 < valorResta2 ) {
                 valorResta1 += 10;
                 meLlevo ++;
             }
-            resultado = valorResta1 - valorResta2;
-            int res = Math.abs(resultado);
-
-            /*if (i != vlr1.length() - 1) {
-                if (res > 9) {
-                    res %= 10;
-                    meLlevo++;
-                }
-            }*/
-            /*if(vlr1.charAt(i) == vlr2.charAt(i) || vlr2.charAt(i) > vlr1.charAt(i) && vlr1.length() != 1){
-                restaAux = valorResta2;
-                valorResta2 = valorResta1;
-                valorResta1 = valorResta2;
-            } else if (valorResta2 > valorResta1){
-                valorResta2 += 10;
-            }
+            //-- ----------------------------------------------------------------
             resultado = valorResta1 - valorResta2;
             //-- ----------------------------------------------------------------
             int res = Math.abs(resultado);
-            //-- ----------------------------------------------------------------
-            */
-
-
             //-- ----------------------------------------------------------------
             String result = Integer.toString(res);
             //-- ----------------------------------------------------------------
@@ -250,8 +230,21 @@ public class BigNumber {
      * @param other
      * @return
      */
-    BigNumber mult(BigNumber other) {
-        return other;
+    public BigNumber mult(BigNumber other) {
+        //-- ----------------------------------------------------------------
+        StringBuilder vlr1 = new StringBuilder(this.getNumero());
+        StringBuilder vlr2 = new StringBuilder(other.getNumero());
+        //-- ----------------------------------------------------------------
+        int valor2 = Integer.parseInt(vlr2.toString());
+        //-- ----------------------------------------------------------------
+        BigNumber multi = new BigNumber("0");
+
+        for (int i = 0; i < valor2 ; i++){
+
+        multi = multi.add(this);
+        }
+
+        return multi;
     }
 
     //-- ----------------------------------------------------------------
