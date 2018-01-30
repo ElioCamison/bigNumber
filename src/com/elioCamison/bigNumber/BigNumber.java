@@ -161,7 +161,7 @@ public class BigNumber {
             vlr2.reverse();
             //-- ----------------------------------------------------------------
             for (int i = 0; i < cont; i++) {
-                vlr1.append(0);
+                vlr2.append(0);
             }
         } else if (vlr1.length() < vlr2.length()){
             //-- ----------------------------------------------------------------
@@ -174,7 +174,7 @@ public class BigNumber {
             vlr2.reverse();
             //-- ----------------------------------------------------------------
             for (int i = 0; i < cont; i++) {
-                vlr1.append(0);
+                vlr2.append(0);
             }
         }
         //-- ----------------------------------------------------------------
@@ -193,30 +193,40 @@ public class BigNumber {
             int valorResta1 = Integer.parseInt(caracterVlr_1);
             int valorResta2 = Integer.parseInt(caracterVlr_2);
             //-- ----------------------------------------------------------------
-            valorResta1 += meLlevo;
+            valorResta2 += meLlevo;
             //-- ----------------------------------------------------------------
             meLlevo = 0;
             //-- ----------------------------------------------------------------
             int resultado = 0;
-            int restaAux = 0;
-            int uno = 1;
-            if(vlr1.charAt(i) == vlr2.charAt(i) || vlr2.charAt(i) > vlr1.charAt(i) && vlr1.length() != 1){
+            //int restaAux = 0;
+
+            if ( valorResta1 < valorResta2 ) {
+                valorResta1 += 10;
+                meLlevo ++;
+            }
+            resultado = valorResta1 - valorResta2;
+            int res = Math.abs(resultado);
+
+            /*if (i != vlr1.length() - 1) {
+                if (res > 9) {
+                    res %= 10;
+                    meLlevo++;
+                }
+            }*/
+            /*if(vlr1.charAt(i) == vlr2.charAt(i) || vlr2.charAt(i) > vlr1.charAt(i) && vlr1.length() != 1){
                 restaAux = valorResta2;
                 valorResta2 = valorResta1;
                 valorResta1 = valorResta2;
-            } else /*if (valorResta2 > valorResta1)*/{
+            } else if (valorResta2 > valorResta1){
                 valorResta2 += 10;
             }
             resultado = valorResta1 - valorResta2;
             //-- ----------------------------------------------------------------
             int res = Math.abs(resultado);
             //-- ----------------------------------------------------------------
-            if (i != vlr1.length() - 1) {
-                if (res > 9) {
-                    res %= 10;
-                    meLlevo++;
-                }
-            }
+            */
+
+
             //-- ----------------------------------------------------------------
             String result = Integer.toString(res);
             //-- ----------------------------------------------------------------

@@ -3,8 +3,8 @@ import com.elioCamison.bigNumber.BigNumber;
 public class Main {
 
     public static void main(String[] args) {
-        BigNumber n1 = new BigNumber("120");
-        BigNumber n2 = new BigNumber("010");
+        BigNumber n1 = new BigNumber("34535233");
+        BigNumber n2 = new BigNumber("04533453");
 
 
 
@@ -27,6 +27,7 @@ public class Main {
 
         System.out.println(n1.sub(n2));
         System.out.println(n1.compareTo(n2));
+
 
 
 
