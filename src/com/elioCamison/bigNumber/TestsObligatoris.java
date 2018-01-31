@@ -110,11 +110,11 @@ public class TestsObligatoris {
         assertEquals(b1, b2);
         assertEquals(new BigNumber("36"), b1.mult(b2));
 
-        /*b1 = new BigNumber("345345345345345234456456456345345");
+        b1 = new BigNumber("345345345345345234456456456345345");
         b2 = new BigNumber("22");
         assertEquals(new BigNumber("7597597597597595158042042039597590"), b1.mult(b2));
 
-        b1 = new BigNumber("234890456345345345345345234456456456345345");
+        /*b1 = new BigNumber("234890456345345345345345234456456456345345");
         b2 = new BigNumber("1228");
         assertEquals(new BigNumber("288445480392084084084083947912528528392083660"), b1.mult(b2));
 

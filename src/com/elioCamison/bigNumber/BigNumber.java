@@ -112,6 +112,13 @@ public class BigNumber {
             //-- ----------------------------------------------------------------
             int res = c222 + c111;
             //-- ----------------------------------------------------------------
+            if ( i == s1.length() - 1 && res > 9) {
+                StringBuilder auxResta = new StringBuilder();
+                String aux2 = String.valueOf(res);
+                auxResta.append(aux2);
+                auxResta.reverse();
+                res = Integer.parseInt(auxResta.toString());
+            }
             if (i != s1.length() - 1) {
                 if (res > 9) {
                     res %= 10;
@@ -232,7 +239,6 @@ public class BigNumber {
      */
     public BigNumber mult(BigNumber other) {
         //-- ----------------------------------------------------------------
-        StringBuilder vlr1 = new StringBuilder(this.getNumero());
         StringBuilder vlr2 = new StringBuilder(other.getNumero());
         //-- ----------------------------------------------------------------
         int valor2 = Integer.parseInt(vlr2.toString());
